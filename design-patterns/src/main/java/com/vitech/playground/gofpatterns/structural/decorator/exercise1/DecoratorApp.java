@@ -1,4 +1,4 @@
-package com.vitech.playground.gofpatterns.structural.decorator;
+package com.vitech.playground.gofpatterns.structural.decorator.exercise1;
 
 public class DecoratorApp {
 

@@ -1,8 +1,5 @@
 package com.vitech.playground.gofpatterns.behavioral.templatemethod.model;
 
-import com.vitech.playground.gofpatterns.structural.decorator.Pizza;
-import lombok.extern.slf4j.Slf4j;
-
 public class MeatPizza {
 
     public void addToppings() {
