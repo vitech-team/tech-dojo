@@ -1,10 +1,5 @@
 package com.vitech.playground.gofpatterns.structural.adapter.model;
 
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-
-@Getter
-@RequiredArgsConstructor
 public enum TemperatureUnit {
 
     CELSIUS("C"),
@@ -12,4 +7,11 @@ public enum TemperatureUnit {
 
     private final String unit;
 
+    TemperatureUnit(String unit) {
+        this.unit = unit;
+    }
+
+    public String getUnit() {
+        return this.unit;
+    }
 }

@@ -16,7 +16,11 @@ public class ObserverApp {
 
         Connection bob = new Connection();
         Connection emily = new Connection();
+
         StatusFeed feed = new StatusFeed();
+
+        bob.addObserver(feed);
+        emily.addObserver(feed);
 
         feed.printStatuses();
 

@@ -5,14 +5,7 @@ import lombok.Setter;
 @Setter
 public class Customer {
 
-    private Account bankAccount;
-    private Account payPalAccount;
-
-    public void makeBankPayment(double amount) {
-        bankAccount.makePayment(amount);
-    }
-
-    public void makePayPalPayment(double amount) {
-        payPalAccount.makePayment(amount);
+    public void makePayment(double amount, Account account) {
+        account.makePayment(amount);
     }
 }

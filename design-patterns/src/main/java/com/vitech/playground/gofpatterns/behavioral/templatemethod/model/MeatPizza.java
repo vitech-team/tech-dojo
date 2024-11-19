@@ -1,6 +1,6 @@
 package com.vitech.playground.gofpatterns.behavioral.templatemethod.model;
 
-public class MeatPizza {
+public class MeatPizza extends Pizza {
 
     public void addToppings() {
         System.out.println("Add tomato");
@@ -18,6 +18,4 @@ public class MeatPizza {
         System.out.println("Mix flour, yeast and salt");
         System.out.println("Roll out the dough");
     }
-
-
 }

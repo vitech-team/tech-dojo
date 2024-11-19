@@ -1,12 +1,25 @@
 package com.vitech.playground.gofpatterns.behavioral.observer.exercise1.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import java.util.ArrayList;
+import java.util.List;
 
-@Getter
-@Setter
 public class Connection {
 
-  private String status;
+    private String status;
+    private final List<StatusFeed> observers = new ArrayList<>();
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+        for (StatusFeed observer : observers) {
+            observer.update(status);
+        }
+    }
+
+    public void addObserver(StatusFeed observer) {
+        observers.add(observer);
+    }
 }
