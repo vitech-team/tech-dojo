@@ -1,8 +1,7 @@
 package com.vitech.playground.gofpatterns.structural.composite.model;
 
-public record Manager(String name) {
-    public void payExpenses(int amount) {
-        System.out.println(name + " has been paid $" + amount);
+public class Manager extends SalesTeam {
+    public Manager(String name) {
+        this.name = name;
     }
-
 }

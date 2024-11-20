@@ -12,15 +12,10 @@ public class VehicleFactory {
     private final Map<Integer, Vehicle> vehicles = new HashMap<>();
 
     public Vehicle getVehicle(int type) {
-        Vehicle vehicle = null;
-
-        if (type == 0) {
-            vehicle = new Car();
-        } else if (type == 1) {
-            vehicle = new Truck();
-        }
-        vehicles.put(type, vehicle);
-
-        return vehicle;
+        return vehicles.computeIfAbsent(type, key -> switch (key) {
+            case 0 -> new Car();
+            case 1 -> new Truck();
+            default -> throw new IllegalArgumentException("Unknown vehicle type: " + key);
+        });
     }
 }

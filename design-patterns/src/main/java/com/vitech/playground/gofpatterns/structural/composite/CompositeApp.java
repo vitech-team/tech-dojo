@@ -18,16 +18,23 @@ public class CompositeApp {
         // Use Composite pattern.
 
         Manager alice = new Manager("Alice");
-        SalesPerson bob = new SalesPerson("Bob", alice);
-        SalesPerson sue = new SalesPerson("Sue", alice);
+        SalesPerson bob = new SalesPerson("Bob");
+        SalesPerson sue = new SalesPerson("Sue");
 
         SalesTeam team = new SalesTeam();
-        team.addManager(alice);
-        team.addSalesPerson(bob);
-        team.addSalesPerson(sue);
+        team.addSubordinate(alice);
+        alice.addSubordinate(bob);
+        alice.addSubordinate(sue);
 
         alice.payExpenses(100);
         bob.payExpenses(300);
-        team.payExpenses(200);
+        sue.payExpenses(200);
+
+        for (SalesTeam manager : team.getSubordinates()) {
+            System.out.println("Manager : " + manager.getName());
+            for (SalesTeam seller : alice.getSubordinates()) {
+                System.out.println("Seller : " + seller.getName());
+            }
+        }
     }
 }

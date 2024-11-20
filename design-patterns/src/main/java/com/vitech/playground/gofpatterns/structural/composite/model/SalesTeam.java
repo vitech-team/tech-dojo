@@ -4,19 +4,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SalesTeam {
-    private final List<Manager> managers = new ArrayList<>();
-    private final List<SalesPerson> salesPeople = new ArrayList<>();
+    protected String name;
+    private final List<SalesTeam> subordinates = new ArrayList<>();
 
     public void payExpenses(int amount) {
-        managers.forEach(payee -> payee.payExpenses(amount));
-        salesPeople.forEach(payee -> payee.payExpenses(amount));
+        System.out.println(name + " has been paid $" + amount);
     }
 
-    public void addManager(Manager manager) {
-        managers.add(manager);
+    public void addSubordinate(SalesTeam salesTeam) {
+        subordinates.add(salesTeam);
     }
 
-    public void addSalesPerson(SalesPerson salesPerson) {
-        salesPeople.add(salesPerson);
+    public List<SalesTeam> getSubordinates() {
+        return subordinates;
+    }
+
+    public String getName() {
+        return name;
     }
 }

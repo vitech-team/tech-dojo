@@ -2,6 +2,7 @@ package com.vitech.playground.gofpatterns.structural.proxy;
 
 import com.vitech.playground.gofpatterns.structural.proxy.model.DisplayObject;
 import com.vitech.playground.gofpatterns.structural.proxy.model.ImageFile;
+import com.vitech.playground.gofpatterns.structural.proxy.model.ProxyImageFile;
 
 import java.util.List;
 
@@ -20,16 +21,16 @@ public class ProxyApp {
         // Apply Proxy pattern to achieve defined goal.
 
         List<DisplayObject> images = List.of(
-                new ImageFile("design-patterns/src/main/resources/gofpatterns/structural/proxy/image1.jpeg"),
-                new ImageFile("design-patterns/src/main/resources/gofpatterns/structural/proxy/image2.jpeg"),
-                new ImageFile("design-patterns/src/main/resources/gofpatterns/structural/proxy/image3.jpeg"),
-                new ImageFile("design-patterns/src/main/resources/gofpatterns/structural/proxy/image4.jpeg"),
-                new ImageFile("design-patterns/src/main/resources/gofpatterns/structural/proxy/image5.jpeg"),
-                new ImageFile("design-patterns/src/main/resources/gofpatterns/structural/proxy/image6.jpeg"),
-                new ImageFile("design-patterns/src/main/resources/gofpatterns/structural/proxy/image7.jpeg"),
-                new ImageFile("design-patterns/src/main/resources/gofpatterns/structural/proxy/image8.jpeg"),
-                new ImageFile("design-patterns/src/main/resources/gofpatterns/structural/proxy/image9.jpeg"),
-                new ImageFile("design-patterns/src/main/resources/gofpatterns/structural/proxy/image10.jpeg")
+                new ProxyImageFile("design-patterns/src/main/resources/gofpatterns/structural/proxy/image1.jpeg"),
+                new ProxyImageFile("design-patterns/src/main/resources/gofpatterns/structural/proxy/image2.jpeg"),
+                new ProxyImageFile("design-patterns/src/main/resources/gofpatterns/structural/proxy/image3.jpeg"),
+                new ProxyImageFile("design-patterns/src/main/resources/gofpatterns/structural/proxy/image4.jpeg"),
+                new ProxyImageFile("design-patterns/src/main/resources/gofpatterns/structural/proxy/image5.jpeg"),
+                new ProxyImageFile("design-patterns/src/main/resources/gofpatterns/structural/proxy/image6.jpeg"),
+                new ProxyImageFile("design-patterns/src/main/resources/gofpatterns/structural/proxy/image7.jpeg"),
+                new ProxyImageFile("design-patterns/src/main/resources/gofpatterns/structural/proxy/image8.jpeg"),
+                new ProxyImageFile("design-patterns/src/main/resources/gofpatterns/structural/proxy/image9.jpeg"),
+                new ProxyImageFile("design-patterns/src/main/resources/gofpatterns/structural/proxy/image10.jpeg")
         );
 
         images.forEach(DisplayObject::display);

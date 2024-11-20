@@ -1,11 +1,14 @@
 package com.vitech.playground.gofpatterns.behavioral.mediator.model;
 
-import lombok.Getter;
-import lombok.Setter;
-
-@Getter
-@Setter
 public class Runway {
 
     private boolean isTaken = false;
+
+    public boolean isTaken() {
+        return isTaken;
+    }
+
+    public void setTaken(boolean taken) {
+        isTaken = taken;
+    }
 }

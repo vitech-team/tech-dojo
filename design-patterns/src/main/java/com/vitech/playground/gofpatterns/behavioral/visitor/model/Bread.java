@@ -1,11 +1,27 @@
 package com.vitech.playground.gofpatterns.behavioral.visitor.model;
 
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
+import com.vitech.playground.gofpatterns.behavioral.visitor.Visitor;
 
-@Getter
-@RequiredArgsConstructor
 public class Bread implements Groceries {
 
-    private final double price;
+    private double price;
+
+    public Bread(double price) {
+        this.price = price;
+    }
+
+    @Override
+    public double getPrice() {
+        return price;
+    }
+
+    @Override
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
+    }
 }

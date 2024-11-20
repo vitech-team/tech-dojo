@@ -1,5 +1,7 @@
 package com.vitech.playground.gofpatterns.behavioral.visitor.model;
 
+import com.vitech.playground.gofpatterns.behavioral.visitor.Visitor;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,5 +24,15 @@ public class GroceryList implements Groceries {
         return groceries.stream().mapToDouble(Groceries::getPrice).sum();
     }
 
+    @Override
+    public void setPrice(double price) {
+        // Not Implemented
+    }
 
+    @Override
+    public void accept(Visitor visitor) {
+        for (Groceries grocery : groceries) {
+            grocery.accept(visitor);
+        }
+    }
 }

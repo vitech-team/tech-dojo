@@ -1,15 +1,24 @@
 package com.vitech.playground.gofpatterns.behavioral.command.model;
 
-import lombok.extern.slf4j.Slf4j;
-
-@Slf4j
 public class Elevator {
 
+    private boolean isOpen;
+
     public void openDoor() {
-        log.info("The door opens!");
+        if (!isOpen) {
+            System.out.println("The door opens!");
+            isOpen = true;
+        } else {
+            System.out.println("The door is already open.");
+        }
     }
 
     public void closeDoor() {
-        log.info("The door closes!");
+        if (isOpen) {
+            System.out.println("The door closes!");
+            isOpen = false;
+        } else {
+            System.out.println("The door is already close.");
+        }
     }
 }

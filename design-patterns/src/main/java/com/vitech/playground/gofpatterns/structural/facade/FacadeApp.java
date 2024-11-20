@@ -12,14 +12,7 @@ public class FacadeApp {
         LocalDate startDate = LocalDate.of(2024, 12, 1);
         LocalDate endDate = LocalDate.of(2024, 12, 15);
 
-        FlightService flightService = new FlightService();
-        flightService.buyOutwardTicket(startDate);
-        flightService.buyReturnTicket(endDate);
-
-        HotelService hotelService = new HotelService();
-        hotelService.bookApartment(startDate, endDate);
-
-        CarRentalService carRentalService = new CarRentalService();
-        carRentalService.rentCar(startDate, endDate);
+        VacationManager vacationManager = new VacationManager();
+        vacationManager.happyVacation(startDate, endDate);
     }
 }

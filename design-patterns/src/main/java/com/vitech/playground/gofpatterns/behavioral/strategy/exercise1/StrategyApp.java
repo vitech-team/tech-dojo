@@ -12,11 +12,10 @@ public class StrategyApp {
         // Update payment system to accept payments from new type of account - crypto.
 
         Customer customer = new Customer();
-        customer.setBankAccount(new BankAccount());
-        customer.setPayPalAccount(new PayPalAccount());
 
-        customer.makeBankPayment(100);
-        customer.makePayPalPayment(2000);
-
+        customer.makePayment(100, new BankAccount());
+        customer.makePayment(2000, new PayPalAccount());
+        customer.makePayment(350, amount ->
+                System.out.println("Payment of $" + amount + " made from Crypto account."));
     }
 }

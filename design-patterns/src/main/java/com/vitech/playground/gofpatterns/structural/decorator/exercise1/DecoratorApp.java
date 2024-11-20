@@ -11,5 +11,16 @@ public class DecoratorApp {
         // Pizza 2: Margherita with Mushrooms, Onions, and Cheese - $7.30.
         // Pizza 3: Margherita with Cheese and Mushrooms - $7.50.
 
+        Pizza pizza1 = new Pepperoni(new Cheese(new PizzaBase()));
+        Pizza pizza2 = new Cheese(new Onions(new Mushrooms(new PizzaBase())));
+        Pizza pizza3 = new Mushrooms(new Cheese(new PizzaBase()));
+
+        System.out.println(pizza1.getDescription() + " - $" + String.format("%.2f", pizza1.getPrice()));
+        System.out.println(pizza2.getDescription() + " - $" + String.format("%.2f", pizza2.getPrice()));
+        System.out.println(pizza3.getDescription() + " - $" + String.format("%.2f", pizza3.getPrice()));
+
+        Pizza pizza4 = new PizzaBase();
+        System.out.println(pizza4.getDescription() + " - $" + String.format("%.2f", pizza4.getPrice()));
+
     }
 }

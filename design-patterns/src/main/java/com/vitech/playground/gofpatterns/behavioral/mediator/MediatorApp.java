@@ -2,12 +2,7 @@ package com.vitech.playground.gofpatterns.behavioral.mediator;
 
 import com.vitech.playground.gofpatterns.behavioral.mediator.model.Plane;
 import com.vitech.playground.gofpatterns.behavioral.mediator.model.Runway;
-import lombok.extern.slf4j.Slf4j;
 
-import java.util.ArrayList;
-import java.util.List;
-
-@Slf4j
 public class MediatorApp {
 
     public static void main(String[] args) {
@@ -16,21 +11,25 @@ public class MediatorApp {
         // in order to decouple the objects and improve the code.
 
         Runway runway = new Runway();
-        List<Plane> planesFlying = new ArrayList<>();
-        List<Plane> planesWaiting = new ArrayList<>();
+        Airport airport = new Airport(runway);
 
-        Plane plane1 = new Plane(1);
-        planesWaiting.add(plane1);
+        Plane plane1 = new Plane(1, airport);
+        Plane plane2 = new Plane(2, airport);
+        Plane plane3 = new Plane(3, airport);
 
-        if (!(plane1.isInFlight() && runway.isTaken())) {
-            log.info("Plane {} is taking off...", plane1.getId());
+        System.out.println("Plains waiting : " + airport.getPlanesWaiting().size());
+        System.out.println("Plains flying : " + airport.getPlanesFlying().size());
 
-            planesWaiting.remove(plane1);
-            planesFlying.add(plane1);
+        plane1.requestTakeOff();
+        System.out.println("Plains waiting : " + airport.getPlanesWaiting().size());
+        System.out.println("Plains flying : " + airport.getPlanesFlying().size());
 
-            plane1.setInFlight(true);
-            runway.setTaken(true);
-        }
+        plane2.requestTakeOff();
+        System.out.println("Plains waiting : " + airport.getPlanesWaiting().size());
+        System.out.println("Plains flying : " + airport.getPlanesFlying().size());
 
+        plane3.requestTakeOff();
+        System.out.println("Plains waiting : " + airport.getPlanesWaiting().size());
+        System.out.println("Plains flying : " + airport.getPlanesFlying().size());
     }
 }
